@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  user:
+    container_name: user-app
+    image: user:latest
+#    build:
+#      context: ..
+#      dockerfile: docker/Dockerfile
+    ports:
+      - 8081:8081
+    network_mode: "host"
+
+  userconsumer:
+    container_name: userconsumer-app
+    image: userconsumer:latest
+    ports:
+      - 8080:8080
+    network_mode: "host"
+
+  unicodereader:
+    container_name: unicodereader-app
+    image: unicodereader:latest
+    ports:
+      - 9898:9898
+    network_mode: "host"
+
+
+
+
+
+
+
+
+#docker-compose up --build -d
+#docker compose down
